@@ -1,14 +1,14 @@
 # North Rift Connectivity Manager
 
-A Vite + React application using Supabase Authentication, PostgreSQL, and Row Level Security.
+A Vite and React application using Supabase Authentication, PostgreSQL, and Row Level Security.
 
 ## Features
 
 * Admin and user authentication
 * Role-based access
 * Institution management
-* CSV import and export
 * Inventory management
+* CSV import and export
 * Supabase database integration
 * Row Level Security
 
@@ -27,7 +27,7 @@ The site register supports:
 
 AP means **Access Point**.
 
-The existing database fields are reused as follows:
+Existing database fields are reused as follows:
 
 * `institution_nemis_code` = Code
 * `institution_name` = Site Name
@@ -38,20 +38,6 @@ New Supabase columns:
 * `category`
 * `project`
 * `access_point_number`
-
-## Required Site Migration
-
-Before running the updated site module, open:
-
-**Supabase → SQL Editor**
-
-Run:
-
-```sql
-supabase-site-fields-migration.sql
-```
-
-This adds the new columns without deleting existing records.
 
 ## Category Options
 
@@ -79,24 +65,6 @@ This adds the new columns without deleting existing records.
 * EARTTDFP
 * KDEAP
 * Other
-
-## CSV Import
-
-The uploader accepts both the new headings and older institution headings.
-
-Required CSV values:
-
-* Code
-* Site Name
-
-Records with an existing Code are updated instead of duplicated.
-
-Sample files:
-
-```text
-sample-site-import.csv
-sample-inventory-import.csv
-```
 
 ## Inventory Module
 
@@ -137,7 +105,7 @@ The Inventory page manages equipment linked to each site.
 * OEM
 * Serial number
 
-Before opening Inventory, run:
+Before using Inventory, run:
 
 ```sql
 supabase-inventory-migration.sql
@@ -146,6 +114,28 @@ supabase-inventory-migration.sql
 Admins can add, edit, and delete inventory records.
 
 Normal users have read-only access.
+
+## for admin authentication
+
+password 41734046
+
+username :admin@connectivity.go.ke
+
+## for user authentication
+
+username:users@connectivity.go.ke
+
+password:42734046
+
+## CSV Import
+
+The project includes:
+
+```text
+sample-inventory-import.csv
+```
+
+Existing records can be updated without creating duplicates.
 
 ## Run Locally
 
@@ -171,21 +161,11 @@ npm run dev
 ## Security
 
 * Supabase Authentication controls login
-* Users with `profiles.role = admin` can create, update, and delete records
-* Users with `profiles.role = user` have read-only access
-* Never place a Supabase secret key or service-role key in the React project
-* Do not upload `.env.local` to GitHub
-## for admin authentication **
-
-password 41734046
-
-username :[admin@connectivity.go.ke](mailto:admin@connectivity.go.ke)
-
-## for user authentication**
-
-username:[users@connectivity.go.ke](mailto:users@connectivity.go.ke)
-
-password:42734046
+* Admin users can create, update, and delete records
+* Normal users have read-only access
+* Never upload `.env.local` to GitHub
+* Never publish user passwords
+* Never use the Supabase secret or service-role key in the React frontend
 
 ## Repository
 
