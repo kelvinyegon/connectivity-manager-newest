@@ -1,0 +1,7 @@
+Site Code,Site Name,Equipment Type,Equipment Name,Model,OEM,Serial Number,Quantity,Connected Routers,UPS Capacity,Status,Notes
+TEST001,Test Institution,Site Switch,Site 1 Switch,S5735-L24T4X-A1,Huawei,SW-TEST-001,1,,,Active,Core switch
+TEST001,Test Institution,Access Switch,Access Switch 1,C9200L-24P-4G,Cisco,AS-TEST-001,1,,,Active,Access layer
+TEST001,Test Institution,Router,Main Router,ISR4331,Cisco,RT-TEST-001,1,3,,Active,Three routers connected
+TEST001,Test Institution,UPS,Main UPS,9PX 3000,Eaton,UPS-TEST-001,1,,3 kVA,Active,Equipment backup
+TEST001,Test Institution,DWDM,DWDM Shelf,OptiX OSN 9800,Huawei,TX-DWDM-001,1,,,Active,Transmission equipment
+TEST001,Test Institution,OSN,OSN Node,OptiX OSN 3500,Huawei,TX-OSN-001,1,,,Active,Transmission node
